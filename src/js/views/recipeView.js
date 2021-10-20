@@ -1,7 +1,8 @@
 import View from './view.js'
 
 import icons from 'url:../../img/icons.svg';
-import { Fraction } from 'fractional';
+import {numberToFraction} from '../helpers.js'
+// import { Fraction } from 'fractional';
 
 
 class RecipeView extends View {
@@ -111,12 +112,14 @@ class RecipeView extends View {
     }
 
     _genetateMarkupIngredient(ing) {
+      // const fraction = new Fraction(ing.quantity).toString()
+      const fraction = numberToFraction(ing.quantity)
       return `
       <li class="recipe__ingredient">
        <svg class="recipe__icon">
         <use href="${icons}#icon-check"></use>
        </svg>
-       <div class="recipe__quantity">${ing.quantity ? new Fraction(ing.quantity).toString() : ''}</div>
+       <div class="recipe__quantity">${ing.quantity ? fraction : ''}</div>
        <div class="recipe__description">
          <span class="recipe__unit">${ing.unit}</span>
          ${ing.description}
