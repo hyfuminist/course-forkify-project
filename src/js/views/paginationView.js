@@ -37,7 +37,7 @@ class PaginationView extends View {
             `
         }
         // On page 1, and there are NO other pages
-        return ''
+        return '<span class="page--cur pagination__cur">Page 1</span>'
     }
 
     _generateMarkupBtnNext(page) {
