@@ -1,5 +1,7 @@
 # forkify Project
 
+https://course-forkify-jyzu.netlify.app/
+
 Recipe application with custom recipe uploads.
 
 Practiced to build following functions by JavaScript:
